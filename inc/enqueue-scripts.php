@@ -8,13 +8,10 @@ defined( 'ABSPATH' ) || exit;
  * @author Mike England <mike.england@webdevstudios.com>
  */
 function tca_blocks_editor_scripts() {
-
-	$editorJSPath = '../build/index.js';
-
 	// Enqueue editor JS.
 	wp_enqueue_script(
 		'tca-blocks-js',
-		plugins_url( $editorJSPath, __FILE__ ),
+		plugins_url( '../build/index.js', __FILE__ ),
 		[ 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components', 'wp-editor' ],
 		filemtime( plugin_dir_path( __FILE__ ) . $blockPath )
 	);
@@ -35,7 +32,7 @@ add_action( 'enqueue_block_editor_assets', 'tca_blocks_editor_scripts' );
  * @author Mike England <mike.england@webdevstudios.com>
  */
 function tca_register_block_styles() {
-
+	// Enqueue frontend styles.
 	wp_enqueue_style(
 		'tca-styles',
 		plugins_url( '../build/style.css', __FILE__ ),
