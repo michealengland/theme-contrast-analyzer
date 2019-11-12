@@ -1,4 +1,5 @@
 .wp-block-tca-swatch {
+	background-color: #fff;
 	list-style: none;
 	padding: 0;
 }
@@ -11,20 +12,9 @@
 }
 
 .primary-color-label {
-	background-color: #222;
-	color: #fff;
 	display: block;
+	font-size: 24px;
 	padding: 5px;
-}
-
-.primary-color-label::before {
-	background: currentColor;
-	border-radius: 15px;
-	content: '';
-	display: inline-block;
-	height: 15px;
-	margin-right: 10px;
-	width: 15px;
 }
 
 .color-pairs {
@@ -37,8 +27,7 @@
 }
 
 .wp-block-tca-swatch .color-pairs > li {
-	background-color: #333;
-	color: #fff;
+	outline: 2px solid #f3f3f3;
 	flex: 0 0 25%;
 	font-size: 14px;
 	list-style: none;
@@ -56,18 +45,24 @@
 	margin-bottom: 10px;
 }
 
+li.contrast-pass,
+li.contrast-fail {
+	border-radius: 10px;
+	display: inline-block;
+	padding: 0 5px;
+}
+
 li.contrast-pass {
-	color: #74edf1;
+	background-color: #74edf1;
 }
 
 li.contrast-fail {
-	color: #ff1ee5;
+	background-color: #ff1ee5;
 	font-weight: 700;
 }
 
 .color-demo {
 	border-radius: 3px;
-	box-shadow: 0 4px 9px -1px rgba(0,0,0,.2);
 	margin-top: 10px;
 	padding: 10px;
 	text-align: center;
