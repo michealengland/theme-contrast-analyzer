@@ -1461,11 +1461,11 @@ function ThemeColorComparison(_ref) {
   var backgroundAnalyzeColor = swatchSecondaryColor;
   var contrastValue = tinycolor2_tinycolor__WEBPACK_IMPORTED_MODULE_2___default.a.readability(textAnalyzeColor, backgroundAnalyzeColor);
   var contrastClassName = contrastValue < 3 ? 'contrast-fail' : 'contrast-pass';
-  var contrastLabel = Math.round(100 * contrastValue) / 100; // const a11yRating = contrastValue < 4.5 ? 'AA or Below' : 'AAA';
-
+  var contrastLabel = Math.round(100 * contrastValue) / 100;
   var a11yRating = checkContrastRating(contrastValue);
-  console.log(a11yRating);
-  var comparisonNotification = tinyBackgroundColor.getBrightness() < tinyTextColor.getBrightness() ? Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Try using a darker background color and/or a brighter text color.') : Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Try using a brighter background color and/or a darker text color.');
+  var notificationRecommendation = tinyBackgroundColor.getBrightness() < tinyTextColor.getBrightness() ? Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Try a darker background color and/or a brighter text color.') : Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Try a brighter background color and/or a darker text color.'); // Display a notification.
+
+  var notificationPass = contrastValue <= 3 ? notificationRecommendation : '';
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("ul", {
     className: "swatch-color"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("li", {
@@ -1474,7 +1474,7 @@ function ThemeColorComparison(_ref) {
       color: textAnalyzeColor,
       backgroundColor: backgroundAnalyzeColor
     }
-  }, swatchTitle), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("li", null, comparisonNotification), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("li", null, 'contrast: ' + contrastLabel), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("li", {
+  }, swatchTitle), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("li", null, notificationPass), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("li", null, 'contrast: ' + contrastLabel), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("li", {
     className: contrastClassName
   }, a11yRating));
 }
