@@ -1,0 +1,1 @@
+import './block-contrast-analyzer';

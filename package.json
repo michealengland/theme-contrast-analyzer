@@ -1,0 +1,31 @@
+{
+  "name": "theme-contrast-analyzer",
+  "version": "0.0.1",
+  "description": "Analyze theme color data for Gutenberg compatible themes.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "wp-scripts start",
+    "build": "wp-scripts build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michealengland/theme-contrast-analyzer.git"
+  },
+  "keywords": [
+    "Gutenberg",
+    "Theme",
+    "Contrast"
+  ],
+  "author": "Mike England",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/michealengland/theme-contrast-analyzer/issues"
+  },
+  "homepage": "https://github.com/michealengland/theme-contrast-analyzer#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "5.1.0"
+  },
+  "dependencies": {
+    "tinycolor2": "^1.4.1"
+  }
+}

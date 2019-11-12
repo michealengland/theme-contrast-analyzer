@@ -1,0 +1,78 @@
+.wp-block-tca-swatch {
+	list-style: none;
+	padding: 0;
+}
+
+.wp-block-tca-swatch > li {
+	list-style: none;
+	font-size: 18px;
+	margin-bottom: 20px;
+	padding: 0;
+}
+
+.primary-color-label {
+	background-color: #222;
+	color: #fff;
+	display: block;
+	padding: 5px;
+}
+
+.primary-color-label::before {
+	background: currentColor;
+	border-radius: 15px;
+	content: '';
+	display: inline-block;
+	height: 15px;
+	margin-right: 10px;
+	width: 15px;
+}
+
+.color-pairs {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	justify-content: flex-start;
+	padding: 0;
+	margin: 0;
+}
+
+.wp-block-tca-swatch .color-pairs > li {
+	background-color: #333;
+	color: #fff;
+	flex: 0 0 25%;
+	font-size: 14px;
+	list-style: none;
+	outline-offset: -1px;
+	padding: 10px;
+}
+
+.swatch-color {
+	margin: 0;
+	padding: 0;
+}
+
+.swatch-color li {
+	list-style: none;
+	margin-bottom: 10px;
+}
+
+li.contrast-pass {
+	color: #74edf1;
+}
+
+li.contrast-fail {
+	color: #ff1ee5;
+	font-weight: 700;
+}
+
+.color-demo {
+	border-radius: 3px;
+	box-shadow: 0 4px 9px -1px rgba(0,0,0,.2);
+	margin-top: 10px;
+	padding: 10px;
+	text-align: center;
+}
+
+.color-pairs li:nth-child(4n+4) {
+	margin-right: 0;
+}

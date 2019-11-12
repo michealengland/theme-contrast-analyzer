@@ -1,0 +1,29 @@
+.wp-block-gput-swatch > li {
+	list-style: none;
+	font-size: 18px;
+	margin-bottom: 20px;
+	padding: 1em;
+}
+
+.color-pairs {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	justify-content: flex-start;
+}
+
+.wp-block-gput-swatch .color-pairs li {
+	box-shadow: 0 4px 9px -1px rgba(0,0,0,.2);
+	color: #fff;
+	flex: 0 0 calc(25% - 8px);
+	font-size: 14px;
+	margin-right: 10px;
+	margin-bottom: 20px;
+	list-style: none;
+	outline-offset: -1px;
+	padding: 10px;
+}
+
+.color-pairs li:nth-child(4n+4) {
+	margin-right: 0;
+}
