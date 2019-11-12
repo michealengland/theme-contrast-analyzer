@@ -40,19 +40,15 @@ function ThemeColorComparison( { swatchColorName, swatchPrimaryColor, swatchSeco
 	const backgroundAnalyzeColor = swatchSecondaryColor;
 	const contrastValue = tinycolor.readability( textAnalyzeColor, backgroundAnalyzeColor );
 	const contrastClassName = ( contrastValue < 3 ) ? 'contrast-fail' : 'contrast-pass';
-
 	const contrastLabel = Math.round( 100 * contrastValue ) / 100;
-
-	// const a11yRating = contrastValue < 4.5 ? 'AA or Below' : 'AAA';
 	const a11yRating = checkContrastRating( contrastValue );
 
-	console.log( a11yRating );
+	const notificationRecommendation = tinyBackgroundColor.getBrightness() < tinyTextColor.getBrightness() ?
+		__( 'Try a darker background color and/or a brighter text color.' ) :
+		__( 'Try a brighter background color and/or a darker text color.' );
 
-
-
-	const comparisonNotification = tinyBackgroundColor.getBrightness() < tinyTextColor.getBrightness() ?
-		__( 'Try using a darker background color and/or a brighter text color.' ) :
-		__( 'Try using a brighter background color and/or a darker text color.' );
+	// Display a notification.
+	const notificationPass = contrastValue <= 3 ? notificationRecommendation : '';
 
 	return (
 		<ul className="swatch-color">
@@ -65,7 +61,7 @@ function ThemeColorComparison( { swatchColorName, swatchPrimaryColor, swatchSeco
 			>
 				{ swatchTitle }
 			</li>
-			<li>{ comparisonNotification }</li>
+			<li>{ notificationPass }</li>
 			<li>{ 'contrast: ' + contrastLabel }</li>
 			<li className={ contrastClassName }>{ a11yRating }</li>
 		</ul>
