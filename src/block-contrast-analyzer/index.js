@@ -8,17 +8,6 @@ const { Fragment } = wp.element;
 const { registerBlockType } = wp.blocks;
 const { select } = wp.data;
 
-// Get theme color data.
-const themeColors = select( 'core/editor' ).getEditorSettings().colors;
-
-// Assign an empty array.
-const colorPairs = [];
-
-// Loop through theme color palette.
-for ( let i = 0; i < themeColors.length - 1; i++ ) {
-	colorPairs.push( themeColors[ i ] );
-}
-
 registerBlockType( 'tca/swatch', {
 	title: __( 'Theme Contrast Analyzer' ),
 	description: __( 'Display registered swatches.' ),
@@ -31,6 +20,17 @@ registerBlockType( 'tca/swatch', {
 		},
 	},
 	edit: ( { className } ) => {
+		// Get theme color data.
+		const themeColors = select( 'core/editor' ).getEditorSettings().colors;
+
+		// Assign an empty array.
+		const colorPairs = [];
+
+		// Loop through theme color palette.
+		for ( let i = 0; i < themeColors.length - 1; i++ ) {
+			colorPairs.push( themeColors[ i ] );
+		}
+
 		return (
 			<Fragment>
 				<ul
@@ -79,6 +79,18 @@ registerBlockType( 'tca/swatch', {
 		);
 	},
 	save: ( { className } ) => {
+
+		// Get theme color data.
+		const themeColors = select( 'core/editor' ).getEditorSettings().colors;
+
+		// Assign an empty array.
+		const colorPairs = [];
+
+		// Loop through theme color palette.
+		for ( let i = 0; i < themeColors.length - 1; i++ ) {
+			colorPairs.push( themeColors[ i ] );
+		}
+
 		return (
 			<ul
 				className={ className }
