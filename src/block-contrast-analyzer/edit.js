@@ -19,13 +19,8 @@ const Edit = ( props, className ) => {
 	// Get theme color data.
 	const themeColors = select( 'core/editor' ).getEditorSettings().colors;
 
-	// Assign an empty array.
-	let colorPairs = [];
-
-	// Loop through theme color palette.
-	for ( let i = 0; i < themeColors.length - 1; i++ ) {
-		colorPairs.push( themeColors[ i ] );
-	}
+	// Copy theme color data for pairing.
+	let colorPairs = [...themeColors];
 
 	return (
 		<Fragment>
