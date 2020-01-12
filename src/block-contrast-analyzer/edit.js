@@ -1,8 +1,19 @@
-const { __ } = wp.i18n;
-const { Fragment } = wp.element;
-const { registerBlockType } = wp.blocks;
-const { select } = wp.data;
+/**
+ * Internal dependencies.
+ */
+import ThemeSwatchAnalyze from './swatch-contrast';
 
+/**
+ * WordPress Dependencies.
+ */
+const {
+	element: {
+		Fragment,
+	},
+	data: {
+		select,
+	},
+} = wp;
 
 const Edit = ( props, className ) => {
 	// Get theme color data.
