@@ -1,14 +1,20 @@
 /**
- * Internal dependencies
+ * Internal dependencies.
  */
-import ThemeSwatchAnalyze from './swatch-contrast';
-import Edit from './edit';
-import Save from './save';
+import edit from './edit';
+import save from './save';
 
-const { __ } = wp.i18n;
-const { Fragment } = wp.element;
-const { registerBlockType } = wp.blocks;
-const { select } = wp.data;
+/**
+ * WordPress Dependencies.
+ */
+const {
+	blocks: {
+		registerBlockType,
+	},
+	i18n: {
+		__,
+	},
+} = wp;
 
 registerBlockType( 'tca/swatch', {
 	title: __( 'Theme Contrast Analyzer' ),
@@ -21,7 +27,7 @@ registerBlockType( 'tca/swatch', {
 			selector: 'div',
 		},
 	},
-	Edit,
-	Save,
+	edit,
+	save,
 } );
 
