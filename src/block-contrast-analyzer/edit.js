@@ -15,19 +15,36 @@ const {
 	},
 } = wp;
 
-const Edit = ( props, className ) => {
+const updateSwatches = ( swatches ) => {
 	// Get theme color data.
 	const themeColors = select( 'core/editor' ).getEditorSettings().colors;
 
+	swatches = swatches.splice(0, swatches.length, ...themeColors);
+
+	return swatches;
+}
+
+const Edit = ( props ) => {
+	const {
+		attributes: {
+			swatches,
+		},
+		className,
+	} = props;
+
+	updateSwatches( swatches );
+
+	console.log('edit swatches', swatches);
+
 	// Copy theme color data for pairing.
-	let colorPairs = [...themeColors];
+	let colorPairs = [...swatches];
 
 	return (
 		<Fragment>
 			<ul
 				className={ className }
 			>
-				{ themeColors.map( ( value, index ) => {
+				{ swatches.map( ( value, index ) => {
 					// Allow all non matching colors.
 					const results = colorPairs.filter( ( pair ) => ( pair.slug ) !== value.slug );
 

@@ -22,9 +22,10 @@ registerBlockType( 'tca/swatch', {
 	category: __( 'widgets' ),
 	attributes: {
 		swatches: {
-			type: 'string',
-			source: 'html',
-			selector: 'div',
+			type: 'array',
+			default: [],
+			// source: 'html',
+			// selector: 'div',
 		},
 	},
 	edit,
