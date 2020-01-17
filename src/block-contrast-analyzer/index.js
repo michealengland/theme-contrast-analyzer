@@ -21,11 +21,10 @@ registerBlockType( 'tca/swatch', {
 	description: __( 'Display registered swatches.' ),
 	category: __( 'widgets' ),
 	attributes: {
-		swatches: {
-			type: 'string',
-			source: 'html',
-			selector: 'div',
-		},
+		colorData: {
+			type: 'array',
+			default: [],
+		}
 	},
 	edit,
 	save,
