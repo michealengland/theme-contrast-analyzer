@@ -6,7 +6,7 @@ Theme Contrast Analyzer is a plugin to help users understand how their colors co
 https://developer.wordpress.org/block-editor/tutorials/javascript/js-build-setup/
 
 # Contrast Notes:
-- Currently contrast is calculated with an 18px font size. AA is a contrast of 3.0 or higher and AAA is a contrast of 7.0 or higher.
+- Currently, contrast is calculated with an 18px font size. AA is a contrast of 3.0 or higher and AAA is a contrast of 7.0 or higher.
 
 ## Changelog
 ### 0.0.2
