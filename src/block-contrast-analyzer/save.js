@@ -3,32 +3,22 @@
  */
 import ThemeSwatchAnalyze from './swatch-contrast';
 
-/**
- * WordPress Dependencies.
- */
-const {
-	data: {
-		select,
-	},
-} = wp;
+const Save = ( props ) => {
+	const {
+		attributes: {
+			colorData,
+		},
+		className,
+	} = props;
 
-const Save = ( props, className ) => {
-	// Get theme color data.
-	const themeColors = select( 'core/editor' ).getEditorSettings().colors;
-
-	// Assign an empty array.
-	let colorPairs = [];
-
-	// Loop through theme color palette.
-	for ( let i = 0; i < themeColors.length - 1; i++ ) {
-		colorPairs.push( themeColors[ i ] );
-	}
+	// Copy theme color data for pairing.
+	let colorPairs = [...colorData];
 
 	return (
 		<ul
 			className={ className }
 		>
-			{ themeColors.map( ( value, index ) => {
+			{ colorData.map( ( value, index ) => {
 				// Create filtered array.
 				const results = colorPairs.filter( ( pair ) => ( pair.slug ) !== value.slug );
 
